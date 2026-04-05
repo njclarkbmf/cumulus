@@ -1,0 +1,34 @@
+{
+  "name": "cumulus-poc",
+  "version": "1.0.0",
+  "description": "Cumulus - Real Estate Tokenization Platform for Philippine Properties",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "compile": "hardhat compile",
+    "deploy:mumbai": "hardhat run scripts/deploy.js --network mumbai",
+    "deploy:production": "hardhat run scripts/deploy.js --network polygon",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\""
+  },
+  "keywords": [
+    "blockchain",
+    "real-estate",
+    "tokenization",
+    "polygon",
+    "nft",
+    "philippines"
+  ],
+  "author": "Bull Run Consulting / Starting Block Ventures",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "concurrently": "^8.2.2",
+    "hardhat": "^2.19.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1"
+  }
+}
