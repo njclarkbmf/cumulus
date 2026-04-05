@@ -24,19 +24,7 @@ Must balance regulatory compliance with user privacy and decentralization princi
 
 ### Architecture
 
-```
-Off-Chain (Backend + Database)
-├── KYC document storage (encrypted)
-├── Third-party verification (Onfido/Jumio)
-├── Identity verification workflow
-└── PII data storage (never on-chain)
-
-On-Chain (Smart Contracts)
-├── KYC status flag (verified: true/false)
-├── Nationality string (non-PII)
-├── Foreign ownership percentage calculation
-└── Transfer gate (check KYC + foreign cap)
-```
+![Compliance Architecture](../img/compliance-architecture.svg)
 
 ### Implementation
 

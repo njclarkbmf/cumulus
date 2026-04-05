@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="380" fill="#f8f9fa"/>
+  <text x="400" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a1a">Transfer Restriction (Overdue Maintenance)</text>
+  
+  <!-- Column headers -->
+  <rect x="30" y="50" width="170" height="35" rx="5" fill="#fef9ec" stroke="#e8971e"/>
+  <text x="115" y="73" text-anchor="middle" font-size="13" font-weight="600" fill="#7c5a00">User</text>
+  
+  <rect x="250" y="50" width="170" height="35" rx="5" fill="#eef2ff" stroke="#6366f1"/>
+  <text x="335" y="73" text-anchor="middle" font-size="13" font-weight="600" fill="#3730a3">Frontend</text>
+  
+  <rect x="470" y="50" width="180" height="35" rx="5" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="560" y="73" text-anchor="middle" font-size="13" font-weight="600" fill="#5b21b6">PropertyNFT Contract</text>
+  
+  <!-- Lifelines -->
+  <line x1="115" y1="85" x2="115" y2="360" stroke="#e8971e" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="335" y1="85" x2="335" y2="360" stroke="#6366f1" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="560" y1="85" x2="560" y2="360" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <!-- Step 1: Attempt transfer -->
+  <line x1="115" y1="115" x2="335" y2="115" stroke="#333" stroke-width="2" marker-end="url(#arrow3)"/>
+  <rect x="135" y="102" width="180" height="22" rx="3" fill="#fff" stroke="#ccc"/>
+  <text x="225" y="117" text-anchor="middle" font-size="10">1. Attempt to transfer</text>
+  
+  <!-- Step 2: transferFrom() -->
+  <line x1="335" y1="155" x2="560" y2="155" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow3)"/>
+  <rect x="355" y="142" width="180" height="22" rx="3" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="445" y="157" text-anchor="middle" font-size="10">2. transferFrom()</text>
+  
+  <!-- Step 3: Check maintenance -->
+  <rect x="560" y="185" width="180" height="30" rx="5" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="650" y="200" text-anchor="middle" font-size="10">3. _beforeTokenTransfer()</text>
+  <text x="650" y="213" text-anchor="middle" font-size="9" fill="#c00000">Check: lastPaid + 30 days</text>
+  
+  <!-- Step 4: FAIL -->
+  <rect x="560" y="230" width="180" height="35" rx="5" fill="#fef2f2" stroke="#c00000"/>
+  <text x="650" y="245" text-anchor="middle" font-size="10" font-weight="600" fill="#c00000">4. FAIL: Overdue</text>
+  <text x="650" y="260" text-anchor="middle" font-size="8" fill="#c00000">revert("Maintenance overdue")</text>
+  
+  <!-- Step 5: Error returned -->
+  <line x1="560" y1="285" x2="335" y2="285" stroke="#c00000" stroke-width="2" marker-end="url(#arrow3)"/>
+  
+  <!-- Step 6: Show error -->
+  <line x1="335" y1="305" x2="115" y2="305" stroke="#c00000" stroke-width="2" marker-end="url(#arrow3)"/>
+  <rect x="140" y="295" width="170" height="25" rx="3" fill="#fef2f2" stroke="#c00000"/>
+  <text x="225" y="312" text-anchor="middle" font-size="9" fill="#c00000">"Maintenance overdue - bayad muna"</text>
+  
+  <!-- Step 7: Pay maintenance -->
+  <rect x="115" y="335" width="170" height="30" rx="5" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="200" y="350" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">7. Pay maintenance fee</text>
+  <text x="200" y="363" text-anchor="middle" font-size="9" fill="#065f46">8. Retry transfer → SUCCESS</text>
+  
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

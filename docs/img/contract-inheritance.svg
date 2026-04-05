@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="900" height="320" fill="#f8f9fa"/>
+  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a1a">Smart Contract Inheritance</text>
+  
+  <!-- CumulusPropertyNFT -->
+  <rect x="30" y="60" width="270" height="240" rx="10" fill="#fff" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="30" y="60" width="270" height="35" rx="10" fill="#8b5cf6"/>
+  <text x="165" y="83" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">CumulusPropertyNFT</text>
+  
+  <rect x="50" y="110" width="110" height="35" rx="5" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <text x="105" y="132" text-anchor="middle" font-size="10">ERC721</text>
+  
+  <rect x="170" y="110" width="110" height="35" rx="5" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <text x="225" y="132" text-anchor="middle" font-size="10">ERC721Enumerable</text>
+  
+  <rect x="50" y="155" width="110" height="35" rx="5" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <text x="105" y="177" text-anchor="middle" font-size="10">Ownable</text>
+  
+  <rect x="170" y="155" width="110" height="35" rx="5" fill="#f5f3ff" stroke="#c4b5fd"/>
+  <text x="225" y="177" text-anchor="middle" font-size="10">Pausable</text>
+  
+  <rect x="50" y="200" width="230" height="85" rx="5" fill="#fef9ec" stroke="#f3b133"/>
+  <text x="165" y="220" text-anchor="middle" font-size="10" font-weight="600" fill="#7c5a00">Custom Logic:</text>
+  <text x="165" y="238" text-anchor="middle" font-size="9" fill="#7c5a00">• Maintenance fee tracking</text>
+  <text x="165" y="253" text-anchor="middle" font-size="9" fill="#7c5a00">• _beforeTokenTransfer override</text>
+  <text x="165" y="268" text-anchor="middle" font-size="9" fill="#7c5a00">• Payable functions</text>
+  
+  <!-- CumulusMarketplace -->
+  <rect x="330" y="60" width="270" height="240" rx="10" fill="#fff" stroke="#6366f1" stroke-width="2"/>
+  <rect x="330" y="60" width="270" height="35" rx="10" fill="#6366f1"/>
+  <text x="465" y="83" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">CumulusMarketplace</text>
+  
+  <rect x="350" y="110" width="110" height="35" rx="5" fill="#eef2ff" stroke="#a5b4fc"/>
+  <text x="405" y="132" text-anchor="middle" font-size="10">Ownable</text>
+  
+  <rect x="470" y="110" width="110" height="35" rx="5" fill="#eef2ff" stroke="#a5b4fc"/>
+  <text x="525" y="132" text-anchor="middle" font-size="10">ReentrancyGuard</text>
+  
+  <rect x="350" y="155" width="230" height="130" rx="5" fill="#eef2ff" stroke="#6366f1"/>
+  <text x="465" y="175" text-anchor="middle" font-size="10" font-weight="600" fill="#3730a3">Custom Logic:</text>
+  <text x="465" y="193" text-anchor="middle" font-size="9" fill="#3730a3">• Listing management</text>
+  <text x="465" y="208" text-anchor="middle" font-size="9" fill="#3730a3">• Buy/sell with enforced royalty</text>
+  <text x="465" y="223" text-anchor="middle" font-size="9" fill="#3730a3">• Foreign ownership checks</text>
+  <text x="465" y="238" text-anchor="middle" font-size="9" fill="#3730a3">• IERC721Receiver</text>
+  <text x="465" y="253" text-anchor="middle" font-size="9" fill="#3730a3">• Emergency withdraw</text>
+  
+  <!-- CumulusRegistry -->
+  <rect x="630" y="60" width="240" height="240" rx="10" fill="#fff" stroke="#10b981" stroke-width="2"/>
+  <rect x="630" y="60" width="240" height="35" rx="10" fill="#10b981"/>
+  <text x="750" y="83" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">CumulusRegistry</text>
+  
+  <rect x="650" y="110" width="200" height="35" rx="5" fill="#ecfdf5" stroke="#6ee7b7"/>
+  <text x="750" y="132" text-anchor="middle" font-size="10">AccessControl</text>
+  
+  <rect x="650" y="155" width="200" height="130" rx="5" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="750" y="175" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">Custom Logic:</text>
+  <text x="750" y="193" text-anchor="middle" font-size="9" fill="#065f46">• Property registration</text>
+  <text x="750" y="208" text-anchor="middle" font-size="9" fill="#065f46">• KYC status management</text>
+  <text x="750" y="223" text-anchor="middle" font-size="9" fill="#065f46">• Foreign ownership tracking</text>
+  <text x="750" y="238" text-anchor="middle" font-size="9" fill="#065f46">• Compliance checks</text>
+  <text x="750" y="253" text-anchor="middle" font-size="9" fill="#065f46">• Redemption eligibility</text>
+</svg>

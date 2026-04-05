@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f3b133;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8971e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" font-size="22" font-weight="700" fill="#1a1a1a">Cumulus System Architecture</text>
+  
+  <!-- USERS Layer -->
+  <rect x="250" y="55" width="500" height="50" rx="8" fill="url(#headerGrad)" filter="url(#shadow)"/>
+  <text x="500" y="85" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Users (Investors, Property Buyers, Platform Operators, Admins)</text>
+  
+  <!-- Arrow down -->
+  <line x1="500" y1="105" x2="500" y2="125" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="120" font-size="11" fill="#666">HTTPS / Web3</text>
+  
+  <!-- FRONTEND Layer -->
+  <rect x="20" y="130" width="960" height="180" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+  <text x="40" y="155" font-size="14" font-weight="700" fill="#e8971e">Frontend (Next.js 14)</text>
+  
+  <!-- Frontend sub-boxes -->
+  <rect x="40" y="165" width="130" height="50" rx="5" fill="#fef9ec" stroke="#f3b133"/>
+  <text x="105" y="195" text-anchor="middle" font-size="11" fill="#7c5a00">Landing Page</text>
+  
+  <rect x="180" y="165" width="130" height="50" rx="5" fill="#fef9ec" stroke="#f3b133"/>
+  <text x="245" y="195" text-anchor="middle" font-size="11" fill="#7c5a00">Properties Browser</text>
+  
+  <rect x="320" y="165" width="130" height="50" rx="5" fill="#fef9ec" stroke="#f3b133"/>
+  <text x="385" y="195" text-anchor="middle" font-size="11" fill="#7c5a00">Dashboard</text>
+  
+  <rect x="460" y="165" width="130" height="50" rx="5" fill="#fef9ec" stroke="#f3b133"/>
+  <text x="525" y="195" text-anchor="middle" font-size="11" fill="#7c5a00">Marketplace</text>
+  
+  <rect x="600" y="165" width="130" height="50" rx="5" fill="#fef9ec" stroke="#f3b133"/>
+  <text x="665" y="195" text-anchor="middle" font-size="11" fill="#7c5a00">Governance</text>
+  
+  <rect x="740" y="165" width="130" height="50" rx="5" fill="#fef9ec" stroke="#f3b133"/>
+  <text x="805" y="195" text-anchor="middle" font-size="11" fill="#7c5a00">Property Detail</text>
+  
+  <!-- Web3 Integration Layer -->
+  <rect x="40" y="230" width="890" height="65" rx="5" fill="#f0f4ff" stroke="#6366f1"/>
+  <text x="40" y="252" font-size="12" font-weight="600" fill="#4338ca">Web3 Integration Layer</text>
+  <text x="40" y="275" font-size="11" fill="#4338ca">RainbowKit │ Wagmi │ Ethers.js v6 │ Network Validation</text>
+  <text x="800" y="275" font-size="11" fill="#4338ca">Polygon Mumbai/Mainnet</text>
+  
+  <!-- Arrows down -->
+  <line x1="300" y1="310" x2="300" y2="330" stroke="#666" stroke-width="2"/>
+  <text x="315" y="325" font-size="10" fill="#666">JSON-RPC</text>
+  
+  <line x1="700" y1="310" x2="700" y2="330" stroke="#666" stroke-width="2"/>
+  <text x="715" y="325" font-size="10" fill="#666">REST API</text>
+  
+  <!-- Polygon Network -->
+  <rect x="20" y="335" width="480" height="200" rx="10" fill="#fff" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="40" y="360" font-size="14" font-weight="700" fill="#7c3aed">Polygon Network</text>
+  
+  <rect x="40" y="375" width="190" height="60" rx="5" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="135" y="400" text-anchor="middle" font-size="11" font-weight="600" fill="#5b21b6">CumulusRegistry</text>
+  <text x="135" y="418" text-anchor="middle" font-size="9" fill="#6d28d9">KYC, Foreign Ownership</text>
+  
+  <rect x="250" y="375" width="190" height="60" rx="5" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="345" y="400" text-anchor="middle" font-size="11" font-weight="600" fill="#5b21b6">CumulusPropertyNFT</text>
+  <text x="345" y="418" text-anchor="middle" font-size="9" fill="#6d28d9">ERC-721, Maintenance</text>
+  
+  <rect x="40" y="445" width="190" height="60" rx="5" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="135" y="470" text-anchor="middle" font-size="11" font-weight="600" fill="#5b21b6">CumulusMarketplace</text>
+  <text x="135" y="488" text-anchor="middle" font-size="9" fill="#6d28d9">Buy/Sell, Royalties</text>
+  
+  <rect x="250" y="445" width="190" height="60" rx="5" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="345" y="470" text-anchor="middle" font-size="11" font-weight="600" fill="#5b21b6">Events (Indexed)</text>
+  <text x="345" y="488" text-anchor="middle" font-size="9" fill="#6d28d9">Listens to blockchain</text>
+  
+  <!-- Backend -->
+  <rect x="520" y="335" width="460" height="200" rx="10" fill="#fff" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="540" y="360" font-size="14" font-weight="700" fill="#059669">Backend (Express.js)</text>
+  
+  <rect x="540" y="375" width="190" height="55" rx="5" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="635" y="398" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">Property API</text>
+  <text x="635" y="415" text-anchor="middle" font-size="9" fill="#047857">GET /api/properties</text>
+  
+  <rect x="750" y="375" width="190" height="55" rx="5" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="845" y="398" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">User/KYC API</text>
+  <text x="845" y="415" text-anchor="middle" font-size="9" fill="#047857">POST /api/users/kyc</text>
+  
+  <rect x="540" y="440" width="190" height="55" rx="5" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="635" y="463" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">Marketplace API</text>
+  <text x="635" y="480" text-anchor="middle" font-size="9" fill="#047857">GET /api/listings</text>
+  
+  <rect x="750" y="440" width="190" height="55" rx="5" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="845" y="463" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">Event Indexer</text>
+  <text x="845" y="480" text-anchor="middle" font-size="9" fill="#047857">Listens to blockchain</text>
+  
+  <!-- Arrow between Polygon and Backend -->
+  <line x1="500" y1="435" x2="520" y2="435" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <!-- Arrow down from Backend -->
+  <line x1="750" y1="535" x2="750" y2="555" stroke="#666" stroke-width="2"/>
+  
+  <!-- PostgreSQL -->
+  <rect x="520" y="560" width="460" height="110" rx="10" fill="#fff" stroke="#0ea5e9" stroke-width="2" filter="url(#shadow)"/>
+  <text x="540" y="585" font-size="14" font-weight="700" fill="#0284c7">PostgreSQL Database</text>
+  
+  <rect x="540" y="595" width="110" height="55" rx="5" fill="#f0f9ff" stroke="#0ea5e9"/>
+  <text x="595" y="625" text-anchor="middle" font-size="10" fill="#0369a1">properties</text>
+  
+  <rect x="660" y="595" width="110" height="55" rx="5" fill="#f0f9ff" stroke="#0ea5e9"/>
+  <text x="715" y="625" text-anchor="middle" font-size="10" fill="#0369a1">users</text>
+  
+  <rect x="780" y="595" width="85" height="55" rx="5" fill="#f0f9ff" stroke="#0ea5e9"/>
+  <text x="822" y="625" text-anchor="middle" font-size="10" fill="#0369a1">listings</text>
+  
+  <rect x="875" y="595" width="85" height="55" rx="5" fill="#f0f9ff" stroke="#0ea5e9"/>
+  <text x="917" y="615" text-anchor="middle" font-size="9" fill="#0369a1">maintenance</text>
+  <text x="917" y="630" text-anchor="middle" font-size="9" fill="#0369a1">payments</text>
+  
+  <rect x="540" y="658" width="110" height="55" rx="5" fill="#f0f9ff" stroke="#0ea5e9"/>
+  <text x="595" y="688" text-anchor="middle" font-size="10" fill="#0369a1">proposals</text>
+  
+  <rect x="660" y="658" width="110" height="55" rx="5" fill="#f0f9ff" stroke="#0ea5e9"/>
+  <text x="715" y="688" text-anchor="middle" font-size="10" fill="#0369a1">votes</text>
+  
+  <!-- Arrow to IPFS -->
+  <line x1="260" y1="535" x2="260" y2="555" stroke="#666" stroke-width="2"/>
+  
+  <!-- IPFS -->
+  <rect x="20" y="560" width="480" height="110" rx="10" fill="#fff" stroke="#f97316" stroke-width="2" filter="url(#shadow)"/>
+  <text x="40" y="585" font-size="14" font-weight="700" fill="#ea580c">IPFS (Pinata)</text>
+  
+  <rect x="40" y="600" width="200" height="55" rx="5" fill="#fff7ed" stroke="#f97316"/>
+  <text x="140" y="630" text-anchor="middle" font-size="10" fill="#c2410c">Property images</text>
+  
+  <rect x="260" y="600" width="200" height="55" rx="5" fill="#fff7ed" stroke="#f97316"/>
+  <text x="360" y="630" text-anchor="middle" font-size="10" fill="#c2410c">Metadata JSON</text>
+  
+  <rect x="40" y="663" width="200" height="55" rx="5" fill="#fff7ed" stroke="#f97316"/>
+  <text x="140" y="693" text-anchor="middle" font-size="10" fill="#c2410c">KYC documents</text>
+  
+  <rect x="260" y="663" width="200" height="55" rx="5" fill="#fff7ed" stroke="#f97316"/>
+  <text x="360" y="693" text-anchor="middle" font-size="10" fill="#c2410c">Property documents</text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

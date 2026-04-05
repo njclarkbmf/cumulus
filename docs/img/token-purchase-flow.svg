@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="900" height="520" fill="#f8f9fa"/>
+  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a1a">Token Purchase Flow</text>
+  
+  <!-- Column headers -->
+  <rect x="30" y="50" width="180" height="35" rx="5" fill="#fef9ec" stroke="#e8971e"/>
+  <text x="120" y="73" text-anchor="middle" font-size="13" font-weight="600" fill="#7c5a00">User</text>
+  
+  <rect x="260" y="50" width="180" height="35" rx="5" fill="#eef2ff" stroke="#6366f1"/>
+  <text x="350" y="73" text-anchor="middle" font-size="13" font-weight="600" fill="#3730a3">Frontend</text>
+  
+  <rect x="490" y="50" width="180" height="35" rx="5" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="580" y="73" text-anchor="middle" font-size="13" font-weight="600" fill="#5b21b6">Marketplace Contract</text>
+  
+  <rect x="720" y="50" width="150" height="35" rx="5" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="795" y="73" text-anchor="middle" font-size="13" font-weight="600" fill="#065f46">Registry Contract</text>
+  
+  <!-- Lifelines -->
+  <line x1="120" y1="85" x2="120" y2="500" stroke="#e8971e" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="350" y1="85" x2="350" y2="500" stroke="#6366f1" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="580" y1="85" x2="580" y2="500" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="795" y1="85" x2="795" y2="500" stroke="#10b981" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <!-- Step 1: Connect Wallet -->
+  <line x1="120" y1="115" x2="350" y2="115" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="140" y="102" width="180" height="22" rx="3" fill="#fff" stroke="#ccc"/>
+  <text x="230" y="117" text-anchor="middle" font-size="10">1. Connect Wallet</text>
+  
+  <!-- Step 2: Browse Properties -->
+  <line x1="120" y1="155" x2="350" y2="155" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="140" y="142" width="180" height="22" rx="3" fill="#fff" stroke="#ccc"/>
+  <text x="230" y="157" text-anchor="middle" font-size="10">2. Browse Properties</text>
+  
+  <!-- Step 3: Select Token -->
+  <line x1="120" y1="195" x2="350" y2="195" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="140" y="182" width="180" height="22" rx="3" fill="#fff" stroke="#ccc"/>
+  <text x="230" y="197" text-anchor="middle" font-size="10">3. Select Token → "Buy"</text>
+  
+  <!-- Step 4: Check KYC -->
+  <line x1="350" y1="235" x2="580" y2="235" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="370" y="222" width="180" height="22" rx="3" fill="#fff" stroke="#ccc"/>
+  <text x="460" y="237" text-anchor="middle" font-size="10">4. Check KYC status</text>
+  
+  <!-- Step 5: Check foreign cap -->
+  <line x1="580" y1="275" x2="795" y2="275" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="600" y="262" width="170" height="22" rx="3" fill="#fff" stroke="#ccc"/>
+  <text x="685" y="277" text-anchor="middle" font-size="10">5. Check foreign cap</text>
+  
+  <!-- Step 6: If allowed -->
+  <line x1="580" y1="315" x2="350" y2="315" stroke="#10b981" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="400" y="302" width="140" height="22" rx="3" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="470" y="317" text-anchor="middle" font-size="10">6. If allowed, proceed</text>
+  
+  <!-- Step 7: Confirm Purchase -->
+  <line x1="120" y1="355" x2="350" y2="355" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="140" y="342" width="180" height="22" rx="3" fill="#fff" stroke="#ccc"/>
+  <text x="230" y="357" text-anchor="middle" font-size="10">7. Confirm (sign tx)</text>
+  
+  <!-- Step 8: buyToken() -->
+  <line x1="350" y1="395" x2="580" y2="395" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="370" y="382" width="180" height="22" rx="3" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="460" y="397" text-anchor="middle" font-size="10">8. buyToken() + payment</text>
+  
+  <!-- Step 9: Calculate royalty -->
+  <rect x="580" y="425" width="215" height="25" rx="5" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="688" y="442" text-anchor="middle" font-size="10">9. Calculate royalty (2.5%)</text>
+  
+  <!-- Step 10: Check canTransfer -->
+  <line x1="580" y1="465" x2="795" y2="465" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="600" y="452" width="170" height="22" rx="3" fill="#fff" stroke="#ccc"/>
+  <text x="685" y="467" text-anchor="middle" font-size="10">10. canTransfer()</text>
+  
+  <!-- Step 11: Transfer + distribute -->
+  <rect x="580" y="485" width="215" height="25" rx="5" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="688" y="502" text-anchor="middle" font-size="9">11. Send royalty, seller, NFT</text>
+  
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
