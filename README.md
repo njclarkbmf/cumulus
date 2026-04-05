@@ -4,13 +4,7 @@ Blockchain-based platform for tokenizing Philippine real estate properties.
 
 ## 🏗️ Architecture
 
-```
-Frontend (Next.js) ←→ Backend (Express) ←→ PostgreSQL
-       ↓
-Polygon Network (Smart Contracts)
-       ↓
-IPFS (Property Metadata)
-```
+![NFT Real Estate Architecture](docs/img/nft_property_platform_architecture.svg)
 
 ## 📋 Prerequisites
 
@@ -25,7 +19,6 @@ IPFS (Property Metadata)
 
 ```bash
 # Root (smart contracts)
-cd cumulus-poc
 npm install
 
 # Frontend
@@ -93,7 +86,7 @@ Visit http://localhost:3000 to see the application!
 ## 📁 Project Structure
 
 ```
-cumulus-poc/
+cumulus/
 ├── contracts/               # Solidity smart contracts
 │   ├── CumulusPropertyNFT.sol   # ERC-721 with maintenance fees
 │   ├── CumulusMarketplace.sol   # Secondary trading with royalties
