@@ -8,7 +8,7 @@ describe("CumulusMarketplace", function () {
   let owner;
   let seller;
   let buyer;
-  let jagiTreasury;
+  let royaltyTreasury;
   let propertyTreasury;
   
   const NFT_NAME = "Cumulus Makati Condo A";
@@ -19,7 +19,7 @@ describe("CumulusMarketplace", function () {
   const LISTING_PRICE = ethers.parseEther("1"); // 1 MATIC
 
   beforeEach(async function () {
-    [owner, seller, buyer, jagiTreasury, propertyTreasury] = await ethers.getSigners();
+    [owner, seller, buyer, royaltyTreasury, propertyTreasury] = await ethers.getSigners();
     
     // Deploy Registry
     const Registry = await ethers.getContractFactory("CumulusRegistry");
@@ -41,7 +41,7 @@ describe("CumulusMarketplace", function () {
     const Marketplace = await ethers.getContractFactory("CumulusMarketplace");
     marketplace = await Marketplace.deploy(
       propertyNFT.address,
-      jagiTreasury.address,
+      royaltyTreasury.address,
       ROYALTY_BPS,
       registry.address
     );
@@ -63,7 +63,7 @@ describe("CumulusMarketplace", function () {
   describe("Deployment", function () {
     it("Should deploy with correct initial values", async function () {
       expect(await marketplace.royaltyBps()).to.equal(ROYALTY_BPS);
-      expect(await marketplace.jagiTreasury()).to.equal(jagiTreasury.address);
+      expect(await marketplace.royaltyTreasury()).to.equal(royaltyTreasury.address);
       expect(await marketplace.registryContract()).to.equal(registry.address);
       expect(await marketplace.propertyNFT()).to.equal(propertyNFT.address);
     });
@@ -73,7 +73,7 @@ describe("CumulusMarketplace", function () {
       await expect(
         Marketplace.deploy(
           ethers.ZeroAddress,
-          jagiTreasury.address,
+          royaltyTreasury.address,
           ROYALTY_BPS,
           registry.address
         )
@@ -97,7 +97,7 @@ describe("CumulusMarketplace", function () {
       await expect(
         Marketplace.deploy(
           propertyNFT.address,
-          jagiTreasury.address,
+          royaltyTreasury.address,
           1001, // > 10%
           registry.address
         )
@@ -186,26 +186,26 @@ describe("CumulusMarketplace", function () {
       const royalty = (LISTING_PRICE * BigInt(ROYALTY_BPS)) / 10000n;
       const sellerAmount = LISTING_PRICE - royalty;
       
-      const jagiBefore = await ethers.provider.getBalance(jagiTreasury.address);
+      const royaltyBefore = await ethers.provider.getBalance(royaltyTreasury.address);
       const sellerBefore = await ethers.provider.getBalance(seller.address);
       
       await marketplace.connect(buyer).buyToken(1, { value: LISTING_PRICE });
       
-      const jagiAfter = await ethers.provider.getBalance(jagiTreasury.address);
+      const royaltyAfter = await ethers.provider.getBalance(royaltyTreasury.address);
       const sellerAfter = await ethers.provider.getBalance(seller.address);
       
-      expect(jagiAfter - jagiBefore).to.equal(royalty);
+      expect(royaltyAfter - royaltyBefore).to.equal(royalty);
       expect(sellerAfter - sellerBefore).to.equal(sellerAmount);
     });
 
-    it("Should transfer royalty to Jagi treasury", async function () {
+    it("Should transfer royalty to treasury", async function () {
       const royalty = (LISTING_PRICE * BigInt(ROYALTY_BPS)) / 10000n;
-      const jagiBefore = await ethers.provider.getBalance(jagiTreasury.address);
+      const royaltyBefore = await ethers.provider.getBalance(royaltyTreasury.address);
       
       await marketplace.connect(buyer).buyToken(1, { value: LISTING_PRICE });
       
-      const jagiAfter = await ethers.provider.getBalance(jagiTreasury.address);
-      expect(jagiAfter - jagiBefore).to.equal(royalty);
+      const royaltyAfter = await ethers.provider.getBalance(royaltyTreasury.address);
+      expect(royaltyAfter - royaltyBefore).to.equal(royalty);
     });
 
     it("Should transfer remainder to seller", async function () {
@@ -320,18 +320,18 @@ describe("CumulusMarketplace", function () {
       ).to.be.reverted;
     });
 
-    it("Should allow owner to update Jagi treasury", async function () {
+    it("Should allow owner to update royalty treasury", async function () {
       const newTreasury = buyer.address;
-      await expect(marketplace.setJagiTreasury(newTreasury))
-        .to.emit(marketplace, "JagiTreasuryUpdated")
+      await expect(marketplace.setRoyaltyTreasury(newTreasury))
+        .to.emit(marketplace, "RoyaltyTreasuryUpdated")
         .withArgs(newTreasury);
       
-      expect(await marketplace.jagiTreasury()).to.equal(newTreasury);
+      expect(await marketplace.royaltyTreasury()).to.equal(newTreasury);
     });
 
     it("Should reject invalid treasury address", async function () {
       await expect(
-        marketplace.setJagiTreasury(ethers.ZeroAddress)
+        marketplace.setRoyaltyTreasury(ethers.ZeroAddress)
       ).to.be.revertedWith("Invalid address");
     });
 

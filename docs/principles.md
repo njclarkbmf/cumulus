@@ -114,7 +114,7 @@ All on-chain data should be publicly verifiable. Users must trust the system, an
 
 // Shows:
 // Purchase Price: ₱500,000
-// Royalty (2.5%): ₱12,500 → Jagi Properties
+// Royalty (2.5%): ₱12,500 → Platform Operator
 // Seller Receives: ₱487,500
 ```
 
@@ -216,7 +216,7 @@ function buyToken(uint256 tokenId) external payable {
         registry.isForeign(msg.sender);
     
     // 3. INTERACTIONS (external calls)
-    payable(jagiTreasury).transfer(royalty);
+    payable(royaltyTreasury).transfer(royalty);
     payable(listing.seller).transfer(sellerAmount);
     propertyNFT.transferFrom(listing.seller, msg.sender, tokenId);
 }

@@ -8,9 +8,9 @@ Accepted
 
 ## Context
 
-Standard NFT royalties (ERC-2981) are optional and can be bypassed by marketplaces. We need guaranteed royalty payments on ALL secondary sales to ensure Jagi Properties receives 2.5% revenue from every transaction.
+Standard NFT royalties (ERC-2981) are optional and can be bypassed by marketplaces. We need guaranteed royalty payments on ALL secondary sales to ensure the platform operator receives 2.5% revenue from every transaction.
 
-Business requirement: Jagi Properties must receive 2.5% royalty on every secondary sale of property tokens. This is a core revenue model and cannot be optional or bypassed.
+Business requirement: Platform operator must receive 2.5% royalty on every secondary sale of property tokens. This is a core revenue model and cannot be optional or bypassed.
 
 ## Decision
 
@@ -26,7 +26,7 @@ function buyToken(uint256 tokenId) external payable {
     uint256 sellerAmount = listing.price - royalty;
     
     // ENFORCED: Royalty sent first
-    payable(jagiTreasury).transfer(royalty);
+    payable(royaltyTreasury).transfer(royalty);
     
     // Seller receives remainder
     payable(listing.seller).transfer(sellerAmount);
@@ -80,7 +80,7 @@ function buyToken(uint256 tokenId) external payable {
 ## Implementation Notes
 
 - Royalty percentage stored in basis points (250 = 2.5%)
-- Jagi treasury address configurable by admin
+- Royalty treasury address configurable by admin
 - Royalty calculation: `(price * royaltyBps) / 10000`
 - Refund overpayment to buyer
 - Revert on underpayment
@@ -91,4 +91,4 @@ function buyToken(uint256 tokenId) external payable {
 - ERC-2981 specification: https://eips.ethereum.org/EIPS/eip-2981
 - OpenSea royalty documentation
 - Manifold Royalty Standard: https://royaltyregistry.xyz/
-- Jagi Properties business model requirements
+- Platform operator business model requirements

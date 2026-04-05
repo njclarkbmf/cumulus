@@ -126,7 +126,7 @@ Custom marketplace with enforced 2.5% royalties and compliance checks.
 
 ```solidity
 uint256 public royaltyBps; // 250 = 2.5%
-address public jagiTreasury;
+address public royaltyTreasury;
 address public registryContract;
 IERC721 public propertyNFT;
 
@@ -155,7 +155,7 @@ struct Listing {
 
 #### Admin
 - `setRoyaltyPercentage(bps)` - Update royalty rate
-- `setJagiTreasury(treasury)` - Update treasury address
+- `setRoyaltyTreasury(treasury)` - Update treasury address
 - `setRegistry(registry)` - Update registry address
 - `emergencyWithdraw(token, to, amount)` - Emergency fund recovery
 
@@ -171,7 +171,7 @@ uint256 royalty = (price * royaltyBps) / 10000;
 uint256 sellerAmount = price - royalty;
 
 // ENFORCED: Royalty sent first
-payable(jagiTreasury).transfer(royalty);
+payable(royaltyTreasury).transfer(royalty);
 payable(seller).transfer(sellerAmount);
 ```
 
@@ -188,7 +188,7 @@ _checkCompliance(address(propertyNFT), seller, msg.sender);
 - `ListingPriceUpdated(tokenId, newPrice, updatedAt)`
 - `TokenSold(tokenId, seller, buyer, nftContract, price, royalty, sellerAmount, soldAt)`
 - `RoyaltyUpdated(newRoyaltyBps)`
-- `JagiTreasuryUpdated(newTreasury)`
+- `RoyaltyTreasuryUpdated(newTreasury)`
 
 ---
 
@@ -206,7 +206,7 @@ _checkCompliance(address(propertyNFT), seller, msg.sender);
 Buyer → Marketplace.buyToken(tokenId) 
   → Check compliance (registry.canTransfer)
   → Calculate royalty
-  → Send royalty to Jagi treasury
+  → Send royalty to royalty treasury
   → Send remainder to seller
   → Transfer NFT to buyer
 ```

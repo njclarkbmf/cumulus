@@ -15,7 +15,7 @@ cd ../backend && npm run dev
 ```
 
 ### 2. Prepare Demo Wallets
-- **Wallet 1 (Admin/Jagi)**: Deployer wallet with MATIC
+- **Wallet 1 (Admin)**: Deployer wallet with MATIC
 - **Wallet 2 (Seller)**: Pre-minted tokens, KYC verified (Filipino)
 - **Wallet 3 (Buyer)**: Empty wallet, KYC verified (Filipino)
 - **Wallet 4 (Foreign Buyer)**: Empty wallet, KYC verified (American)
@@ -81,7 +81,7 @@ await propertyNFT.mint(seller.address, 2, "ipfs://QmProperty2");
 - Show buy modal with breakdown
 
 **Say:**
-> "When you buy a token, the royalty is automatically deducted. Here you can see: Purchase price is ₱500,000, 2.5% royalty (₱12,500) goes to Jagi Properties, and the seller receives ₱487,500. This happens automatically - it cannot be bypassed."
+> "When you buy a token, the royalty is automatically deducted. Here you can see: Purchase price is ₱500,000, 2.5% royalty (₱12,500) goes to the platform operator, and the seller receives ₱487,500. This happens automatically - it cannot be bypassed."
 
 **Action:**
 - Confirm transaction
@@ -160,7 +160,7 @@ await propertyNFT.mint(seller.address, 2, "ipfs://QmProperty2");
 
 ## Key Talking Points
 
-### For Investors (Jagi Properties)
+### For Investors (Property Developers)
 - **Revenue Model**: 2.5% royalty on ALL secondary sales (enforced, not optional)
 - **Market Opportunity**: Philippine real estate market worth ₱1.5T+
 - **Competitive Advantage**: First platform with enforced royalties + maintenance fees

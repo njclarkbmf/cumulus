@@ -46,7 +46,7 @@ async function main() {
   const Marketplace = await hre.ethers.getContractFactory("CumulusMarketplace");
   const marketplace = await Marketplace.deploy(
     propertyNFTAddress,
-    deployer.address, // Jagi treasury (deployer for testing)
+    deployer.address, // royalty treasury (deployer for testing)
     ROYALTY_BPS,
     registryAddress
   );

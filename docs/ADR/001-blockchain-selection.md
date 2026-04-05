@@ -14,7 +14,7 @@ The Cumulus platform requires:
 - NFT minting and trading capabilities
 - Custom smart contract logic for royalties and maintenance fees
 - Low transaction costs for viable unit economics (target: 10+ properties, ~100 tokens each)
-- Institutional credibility for Jagi Properties partnership
+- Institutional credibility for property developer partnerships
 - Regulatory compliance tooling (Chainalysis, Elliptic)
 - PDAX exchange compatibility
 
@@ -62,7 +62,7 @@ The Cumulus platform requires:
 3. **Binance Smart Chain (BSC)**
    - Pros: Low fees, fast transactions, EVM compatible
    - Cons: Too centralized (21 validators controlled by Binance), regulatory concerns, institutional stigma
-   - Why rejected: Jagi Properties would not accept BSC for compliance reasons
+   - Why rejected: Property developers would not accept BSC for compliance reasons
 
 4. **Solana**
    - Pros: Extremely fast, very low fees
@@ -80,4 +80,4 @@ The Cumulus platform requires:
 - Ethereum gas tracker: https://etherscan.io/gastracker
 - Polygon institutional partnerships: https://polygon.technology/partnerships
 - SEC CASP guidelines for blockchain selection
-- Jagi Properties technical requirements document
+- Philippine property developer technical requirements document

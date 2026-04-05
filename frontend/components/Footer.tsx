@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>© 2026 Cumulus by Jagi Properties & Bull Run Consulting. All rights reserved.</p>
+          <p>© 2026 Cumulus by Bull Run Consulting. All rights reserved.</p>
         </div>
       </div>
     </footer>

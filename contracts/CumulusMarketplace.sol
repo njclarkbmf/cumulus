@@ -24,7 +24,7 @@ contract CumulusMarketplace is Ownable, IERC721Receiver {
     
     // State variables
     uint256 public royaltyBps; // basis points (250 = 2.5%)
-    address public jagiTreasury;
+    address public royaltyTreasury;
     address public registryContract;
     IERC721 public propertyNFT;
     
@@ -64,29 +64,29 @@ contract CumulusMarketplace is Ownable, IERC721Receiver {
     );
     
     event RoyaltyUpdated(uint256 newRoyaltyBps);
-    event JagiTreasuryUpdated(address newTreasury);
+    event RoyaltyTreasuryUpdated(address newTreasury);
     event RegistryUpdated(address newRegistry);
     
     /**
      * @dev Constructor
      * @param _propertyNFT Address of the PropertyNFT contract
-     * @param _jagiTreasury Address where royalties are sent
+     * @param _royaltyTreasury Address where royalties are sent
      * @param _royaltyBps Royalty in basis points (250 = 2.5%)
      * @param _registry Address of the CumulusRegistry contract
      */
     constructor(
         address _propertyNFT,
-        address _jagiTreasury,
+        address _royaltyTreasury,
         uint256 _royaltyBps,
         address _registry
     ) Ownable(msg.sender) {
         require(_propertyNFT != address(0), "Invalid NFT contract");
-        require(_jagiTreasury != address(0), "Invalid treasury");
+        require(_royaltyTreasury != address(0), "Invalid treasury");
         require(_registry != address(0), "Invalid registry");
         require(_royaltyBps <= 1000, "Royalty too high"); // Max 10%
-        
+
         propertyNFT = IERC721(_propertyNFT);
-        jagiTreasury = _jagiTreasury;
+        royaltyTreasury = _royaltyTreasury;
         royaltyBps = _royaltyBps;
         registryContract = _registry;
     }
@@ -183,8 +183,8 @@ contract CumulusMarketplace is Ownable, IERC721Receiver {
         // Mark listing as inactive before transfers (prevent reentrancy)
         listing.active = false;
         
-        // ENFORCED: Send royalty to Jagi treasury first
-        payable(jagiTreasury).transfer(royalty);
+        // ENFORCED: Send royalty to treasury first
+        payable(royaltyTreasury).transfer(royalty);
         
         // Send remainder to seller
         payable(seller).transfer(sellerAmount);
@@ -245,13 +245,13 @@ contract CumulusMarketplace is Ownable, IERC721Receiver {
     }
     
     /**
-     * @dev Set Jagi treasury address (admin only)
+     * @dev Set royalty treasury address (admin only)
      * @param treasury New treasury address
      */
-    function setJagiTreasury(address treasury) external onlyOwner {
+    function setRoyaltyTreasury(address treasury) external onlyOwner {
         require(treasury != address(0), "Invalid address");
-        jagiTreasury = treasury;
-        emit JagiTreasuryUpdated(treasury);
+        royaltyTreasury = treasury;
+        emit RoyaltyTreasuryUpdated(treasury);
     }
     
     /**

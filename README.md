@@ -1,6 +1,6 @@
 # Cumulus - Real Estate Tokenization Platform
 
-Blockchain-based platform for tokenizing Philippine real estate properties. Built for Jagi Properties and Bull Run Consulting.
+Blockchain-based platform for tokenizing Philippine real estate properties.
 
 ## 🏗️ Architecture
 
@@ -163,7 +163,7 @@ After deployment, update these in `.env`:
 REGISTRY_ADDRESS=0x...
 PROPERTY_NFT_ADDRESS=0x...
 MARKETPLACE_ADDRESS=0x...
-JAGI_TREASURY_ADDRESS=0x...
+ROYALTY_TREASURY_ADDRESS=0x...
 PROPERTY_TREASURY_ADDRESS=0x...
 ```
 
@@ -217,11 +217,10 @@ cd backend
 
 ## 📝 License
 
-Proprietary - Bull Run Consulting / Starting Block Ventures / Jagi Properties
+Proprietary - Bull Run Consulting / Starting Block Ventures
 
 ## 👥 Team
 
-- **Jagi Properties** - Philippine real estate developer
 - **Bull Run Consulting** - Web3 venture builder
 - **Starting Block Ventures** - Venture studio
 

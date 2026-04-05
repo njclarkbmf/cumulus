@@ -48,7 +48,6 @@
 ```
 ┌─────────┐          ┌──────────┐          ┌──────────────┐          ┌──────────┐
 │  Admin  │          │ Frontend │          │ PropertyNFT  │          │ Registry │
-│  (Jagi) │          │          │          │  Contract    │          │ Contract │
 └────┬────┘          └────┬─────┘          └──────┬───────┘          └────┬─────┘
      │                    │                       │                       │
      │ 1. Create Property │                       │                       │
@@ -185,7 +184,7 @@
      │                    │                       │    Royalty (2.5%)     │
      │                    │                       │                       │
      │                    │                       │ 8. Send Royalty       │
-     │                    │                       │    to Jagi Treasury   │
+     │                    │                       │    to Royalty Treasury   │
      │                    │                       │                       │
      │                    │                       │ 9. Send Remainder     │
      │                    │                       │    to Seller          │

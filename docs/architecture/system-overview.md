@@ -5,7 +5,7 @@
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                          USERS                                   │
-│  (Investors, Property Buyers, Jagi Properties, Admins)           │
+│  (Investors, Property Buyers, Platform Operators, Admins)          │
 └──────────────────────┬──────────────────────────────────────────┘
                        │
                        │ HTTPS / Web3
@@ -117,7 +117,7 @@ User                    Frontend                Marketplace Contract        Regi
  │                        ├──────────────────────────►│                          │
  │                        │                           │                          │
  │                        │                           │ 9. Calculate royalty     │
- │                        │                           │    (2.5% to Jagi)        │
+ │                        │                           │    (2.5% to treasury)    │
  │                        │                           │                          │
  │                        │                           │ 10. Check canTransfer()  │
  │                        │                           ├─────────────────────────►
